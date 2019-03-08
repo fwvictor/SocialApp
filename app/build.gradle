@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+apply from: '../android_commons.gradle'
+apply from: '../android_dependencies.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    defaultConfig {
+        applicationId "com.sociallogin.sociallogin"
+
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildToolsVersion '28.0.3'
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation domainDependencies.rxKotlin
+    implementation domainDependencies.timber
+    implementation domainDependencies.dagger
+    implementation domainDependencies.daggerAndroid
+    implementation domainDependencies.daggerAndroidSupport
+    kapt domainDependencies.daggerCompiler
+    kapt domainDependencies.daggerAndroidProcessor
+    implementation domainDependencies.playServices_auth
+    implementation domainDependencies.firebaseAuth
+    implementation domainDependencies.firebaseUiAuth
+    implementation domainDependencies.firebaseCore
+
+    implementation uiDependencies.appCompat
+    implementation uiDependencies.supportDesign
+    implementation uiDependencies.constraintLayout
+    implementation uiDependencies.lifecycleExtensions
+
+    //Testing
+    testImplementation testDependecies.junit
+    androidTestImplementation testDependecies.espressoCore
+    androidTestImplementation testDependecies.testRunner
+}
+
+apply plugin: 'com.google.gms.google-services'
