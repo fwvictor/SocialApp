@@ -7,12 +7,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.firebase.auth.FirebaseAuth
 import io.reactivex.Completable
 import io.reactivex.Single
 import java.lang.Exception
 import javax.inject.Inject
-
 
 
 class GoogleSignInUtils @Inject constructor() : SignInUtils {
@@ -22,7 +20,6 @@ class GoogleSignInUtils @Inject constructor() : SignInUtils {
     }
 
     private lateinit var googleSignInClient: GoogleSignInClient
-    private lateinit var auth : FirebaseAuth
     private lateinit var activity: Activity
 
     override fun init(activity: Activity) {
@@ -34,8 +31,6 @@ class GoogleSignInUtils @Inject constructor() : SignInUtils {
             .build()
 
         googleSignInClient = GoogleSignIn.getClient(activity, gso)
-
-        auth = FirebaseAuth.getInstance()
     }
 
     override fun performLogin(): Completable {
@@ -65,8 +60,8 @@ class GoogleSignInUtils @Inject constructor() : SignInUtils {
 
     override fun isUserLoggedIn(): Single<Boolean> {
         return Single.create { emitter ->
-            val currentUser = auth.currentUser
-            emitter.onSuccess(currentUser != null)
+            val googleSignInAccount = GoogleSignIn.getLastSignedInAccount(activity)
+            emitter.onSuccess(googleSignInAccount != null)
         }
     }
 
@@ -74,7 +69,6 @@ class GoogleSignInUtils @Inject constructor() : SignInUtils {
         return Completable.create { emitter ->
             try {
                 googleSignInClient.signOut()
-                FirebaseAuth.getInstance().signOut()
                 emitter.onComplete()
             } catch (e: ApiException) {
                 emitter.onError(e)

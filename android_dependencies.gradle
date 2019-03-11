@@ -38,10 +38,7 @@ rootProject.ext {
             daggerAndroidSupport  : "com.google.dagger:dagger-android-support:$daggerVersion",
             daggerAndroidProcessor:
                     "com.google.dagger:dagger-android-processor:$daggerVersion",
-            playServices_auth     : "com.google.android.gms:play-services-auth:$playServicesVersion",
-            firebaseAuth          : "com.google.firebase:firebase-auth:$firebaseAuthVersion",
-            firebaseUiAuth        : "com.firebaseui:firebase-ui-auth:$firebaseUiAuthVersion",
-            firebaseCore          : "com.google.firebase:firebase-core:$firebaseCoreVersion"
+            playServices_auth     : "com.google.android.gms:play-services-auth:$playServicesVersion"
     ]
 
     testDependecies = [

@@ -2,7 +2,6 @@ package com.sociallogin.sociallogin.presentation
 
 import android.app.Activity
 import android.app.Application
-import com.google.firebase.FirebaseApp
 import com.sociallogin.sociallogin.BuildConfig
 import com.sociallogin.sociallogin.domain.dagger.AppInjector
 import com.sociallogin.sociallogin.domain.utils.NotLoggingTree
@@ -21,9 +20,6 @@ class SocialLoginApp: Application(), HasActivityInjector {
 
     override fun onCreate() {
         super.onCreate()
-
-        // Init firebase
-        FirebaseApp.initializeApp(this)
 
         // Dagger 2 injection
         AppInjector.init(this)
