@@ -7,6 +7,7 @@ rootProject.ext {
     firebaseAuthVersion = '16.1.0'
     firebaseUiAuthVersion = '4.1.0'
     firebaseCoreVersion = '16.0.7'
+    twitterCoreVersion = '3.3.0@aar'
 
     supportLibrary = '28.0.0'
     constraintlayoutVersion = '1.0.2'
@@ -24,7 +25,8 @@ rootProject.ext {
             constraintLayout   :
                     "com.android.support.constraint:constraint-layout:$constraintlayoutVersion",
             lifecycleExtensions:
-                    "android.arch.lifecycle:extensions:$archLifecycleVersion"
+                    "android.arch.lifecycle:extensions:$archLifecycleVersion",
+            twitterCore        : "com.twitter.sdk.android:twitter-core:$twitterCoreVersion"
     ]
 
     domainDependencies = [
@@ -38,7 +40,10 @@ rootProject.ext {
             daggerAndroidSupport  : "com.google.dagger:dagger-android-support:$daggerVersion",
             daggerAndroidProcessor:
                     "com.google.dagger:dagger-android-processor:$daggerVersion",
-            playServices_auth     : "com.google.android.gms:play-services-auth:$playServicesVersion"
+            playServices_auth     : "com.google.android.gms:play-services-auth:$playServicesVersion",
+            firebaseAuth          : "com.google.firebase:firebase-auth:$firebaseAuthVersion",
+            firebaseUiAuth        : "com.firebaseui:firebase-ui-auth:$firebaseUiAuthVersion",
+            firebaseCore          : "com.google.firebase:firebase-core:$firebaseCoreVersion"
     ]
 
     testDependecies = [
