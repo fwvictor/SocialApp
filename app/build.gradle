@@ -45,7 +45,6 @@ dependencies {
     implementation domainDependencies.playServices_auth
     implementation domainDependencies.firebaseAuth
     implementation domainDependencies.firebaseUiAuth
-    implementation domainDependencies.firebaseCore
 
     implementation uiDependencies.appCompat
     implementation uiDependencies.supportDesign
