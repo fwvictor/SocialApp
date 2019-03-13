@@ -2,11 +2,14 @@
     <string name="app_name">SocialLogin</string>
 
     <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_in_with_twitter">Sign in with Twitter</string>
     <string name="logout_with_google">Logout with Google</string>
+    <string name="logout_with_twitter">Logout with Twitter</string>
 
-    <string name="sign_in_successfully">User Logged in</string>
-    <string name="sign_in_error">Sign in error</string>
-    <string name="logout_successfully">Any user logged in</string>
+    <string name="login_google_successfully">User is logged with Google</string>
+    <string name="login_twitter_successfully">User is logged with Twitter</string>
+    <string name="logout_google_successfully">Any user is logged with Google</string>
+    <string name="logout_twitter_successfully">Any user is logged with Twitter</string>
 
     <string name="common_error">Error, please try again</string>
     <string name="error">Error: %s</string>

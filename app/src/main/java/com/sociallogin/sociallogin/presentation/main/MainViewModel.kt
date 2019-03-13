@@ -17,8 +17,14 @@ class MainViewModel @Inject constructor(
 
     val isGoogleLoggedIn = MutableLiveData<Resource<Boolean>>()
 
+    val isTwitterLoggedIn = MutableLiveData<Resource<Boolean>>()
+
     fun initGoogleLogin(activity: Activity) {
         mainInteractor.initGoogleLogin(activity)
+    }
+
+    fun initTwitterLogin(activity: Activity) {
+        // TODO
     }
 
     fun isUserLoggedInWithGoogle() {
@@ -35,6 +41,10 @@ class MainViewModel @Inject constructor(
                     isGoogleLoggedIn.value = Resource.error(it)
                 }
             )
+    }
+
+    fun isUserLoggedInWithTwitter() {
+        // TODO
     }
 
     fun loginWithGoogle() {
@@ -66,6 +76,14 @@ class MainViewModel @Inject constructor(
             )
     }
 
+    fun handleLoginResponseWithTwitter(data: Any?) {
+        // TODO
+    }
+
+    fun handleLoginErrorWithTwitter(throwable: Throwable?) {
+        // TODO
+    }
+
     fun logoutWithGoogle() {
         disposables += mainInteractor.logoutWithGoogle()
             .subscribeBy(
@@ -78,6 +96,10 @@ class MainViewModel @Inject constructor(
                     isGoogleLoggedIn.value = Resource.error(it)
                 }
             )
+    }
+
+    fun logoutWithTwitter() {
+        // TODO
     }
 
     override fun onCleared() {
