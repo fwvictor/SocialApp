@@ -28,8 +28,10 @@ class TwitterSignInUtils @Inject constructor() : SignInUtils {
     }
 
     override fun isUserLoggedIn(): Single<Boolean> {
-        // todo
-        return Single.just(true)
+        return Single.create { emitter ->
+            val currentUser = auth.currentUser
+            emitter.onSuccess(currentUser != null)
+        }
     }
 
     override fun performLogin(): Completable {

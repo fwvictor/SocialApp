@@ -44,7 +44,19 @@ class MainViewModel @Inject constructor(
     }
 
     fun isUserLoggedInWithTwitter() {
-        // TODO
+        isTwitterLoggedIn.value = Resource.loading()
+
+        disposables += mainInteractor.isTwitterUserLoggedIn()
+            .subscribeBy(
+                onSuccess = {
+                    Timber.d("isUserLoggedInWithTwitter.onComplete")
+                    isTwitterLoggedIn.value = Resource.success(it)
+                },
+                onError = {
+                    Timber.e("isUserLoggedInWithTwitter.onError ${it.message}")
+                    isTwitterLoggedIn.value = Resource.error(it)
+                }
+            )
     }
 
     fun loginWithGoogle() {
