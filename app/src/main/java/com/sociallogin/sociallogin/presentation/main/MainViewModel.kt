@@ -24,7 +24,7 @@ class MainViewModel @Inject constructor(
     }
 
     fun initTwitterLogin(activity: Activity) {
-        // TODO
+        mainInteractor.initTwitterLogin(activity)
     }
 
     fun isUserLoggedInWithGoogle() {
@@ -77,11 +77,24 @@ class MainViewModel @Inject constructor(
     }
 
     fun handleLoginResponseWithTwitter(data: Any?) {
-        // TODO
+        disposables += mainInteractor.handleLoginResponseWithTwitter(data)
+            .subscribeBy(
+                onComplete = {
+                    Timber.d("handleLoginResponseWithTwitter.onComplete")
+                    isTwitterLoggedIn.value = Resource.success(true)
+                },
+                onError = {
+                    Timber.e("handleLoginResponseWithTwitter.onError ${it.message}")
+                    isTwitterLoggedIn.value = Resource.error(it)
+                }
+            )
     }
 
     fun handleLoginErrorWithTwitter(throwable: Throwable?) {
-        // TODO
+        throwable?.let {
+            Timber.e("handleLoginErrorWithTwitter.onError ${it.message}")
+            isTwitterLoggedIn.value = Resource.error(it)
+        }
     }
 
     fun logoutWithGoogle() {

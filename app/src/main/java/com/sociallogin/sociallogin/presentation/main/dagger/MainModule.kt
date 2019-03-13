@@ -4,6 +4,7 @@ import android.app.Activity
 import com.sociallogin.sociallogin.presentation.main.MainInteractor
 import com.sociallogin.sociallogin.presentation.main.view.MainActivity
 import com.sociallogin.sociallogin.presentation.utils.GoogleSignInUtils
+import com.sociallogin.sociallogin.presentation.utils.TwitterSignInUtils
 import dagger.Module
 import dagger.Provides
 
@@ -17,8 +18,12 @@ class MainModule {
     fun providesGoogleSignInUtils(): GoogleSignInUtils = GoogleSignInUtils()
 
     @Provides
+    fun providesTwitterSignInUtils(): TwitterSignInUtils = TwitterSignInUtils()
+
+    @Provides
     fun providesMainInteractor(
-        googleSignInUtils: GoogleSignInUtils
-    ) = MainInteractor(googleSignInUtils)
+        googleSignInUtils: GoogleSignInUtils,
+        twitterSignInUtils: TwitterSignInUtils
+    ) = MainInteractor(googleSignInUtils, twitterSignInUtils)
 
 }

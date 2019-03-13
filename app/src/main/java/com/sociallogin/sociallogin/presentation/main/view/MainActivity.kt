@@ -12,6 +12,7 @@ import com.sociallogin.sociallogin.domain.dagger.Injectable
 import com.sociallogin.sociallogin.presentation.main.MainViewModel
 import com.sociallogin.sociallogin.presentation.model.Status
 import com.sociallogin.sociallogin.presentation.utils.GoogleSignInUtils
+import com.sociallogin.sociallogin.presentation.utils.TwitterSignInUtils
 import com.sociallogin.sociallogin.presentation.utils.extension.observe
 import com.twitter.sdk.android.core.Callback
 import com.twitter.sdk.android.core.TwitterException
@@ -50,6 +51,8 @@ class MainActivity : AppCompatActivity(), Injectable {
 
         if (requestCode == GoogleSignInUtils.GOOGLE_REQ_CODE) {
             viewModel.handleLoginResponseWithGoogle(data)
+        } else if (requestCode == TwitterSignInUtils.TWITTER_REQ_CODE){
+            btnTwitterLogin.onActivityResult(requestCode, resultCode, data)
         }
     }
 
