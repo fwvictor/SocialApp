@@ -62,8 +62,16 @@ class TwitterSignInUtils @Inject constructor() : SignInUtils {
     }
 
     override fun logout(): Completable {
-        return Completable.complete()
-        // todo
+        return Completable.create { emitter ->
+            try {
+                FirebaseAuth.getInstance().signOut()
+                TwitterCore.getInstance().sessionManager.clearActiveSession()
+
+                emitter.onComplete()
+            } catch (e: ApiException) {
+                emitter.onError(e)
+            }
+        }
     }
 
 }

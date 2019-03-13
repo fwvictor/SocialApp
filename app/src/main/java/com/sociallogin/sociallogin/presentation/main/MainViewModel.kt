@@ -112,7 +112,17 @@ class MainViewModel @Inject constructor(
     }
 
     fun logoutWithTwitter() {
-        // TODO
+        disposables += mainInteractor.logoutWithTwitter()
+            .subscribeBy(
+                onComplete = {
+                    Timber.d("logoutWithTwitter.onComplete")
+                    isTwitterLoggedIn.value = Resource.success(false)
+                },
+                onError = {
+                    Timber.e("logoutWithTwitter.onError ${it.message}")
+                    isTwitterLoggedIn.value = Resource.error(it)
+                }
+            )
     }
 
     override fun onCleared() {
