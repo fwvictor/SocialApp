@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_google.*
 import timber.log.Timber
 import java.lang.Exception
 
-class GoogleActivity : AppCompatActivity() {
+class GoogleLoginActivity : AppCompatActivity() {
 
     companion object {
         private const val GOOGLE_REQ_CODE = 100
