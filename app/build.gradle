@@ -3,7 +3,6 @@ apply from: '../android_commons.gradle'
 apply from: '../android_dependencies.gradle'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
 
 android {
     defaultConfig {
@@ -30,13 +29,7 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation domainDependencies.rxKotlin
     implementation domainDependencies.timber
-    implementation domainDependencies.dagger
-    implementation domainDependencies.daggerAndroid
-    implementation domainDependencies.daggerAndroidSupport
-    kapt domainDependencies.daggerCompiler
-    kapt domainDependencies.daggerAndroidProcessor
     implementation domainDependencies.playServices_auth
 
     implementation uiDependencies.appCompat
