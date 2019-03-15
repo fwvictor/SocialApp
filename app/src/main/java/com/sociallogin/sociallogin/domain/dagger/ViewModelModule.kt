@@ -3,7 +3,7 @@ package com.sociallogin.sociallogin.domain.dagger
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import com.sociallogin.sociallogin.presentation.common.viewmodel.ViewModelFactory
-import com.sociallogin.sociallogin.presentation.main.MainViewModel
+import com.sociallogin.sociallogin.presentation.google.GoogleViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -16,7 +16,7 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(MainViewModel::class)
-    abstract fun bindMainViewModel(viewModel: MainViewModel): ViewModel
+    @ViewModelKey(GoogleViewModel::class)
+    abstract fun bindMainViewModel(viewModel: GoogleViewModel): ViewModel
 
 }

@@ -1,8 +1,8 @@
-package com.sociallogin.sociallogin.presentation.main.dagger
+package com.sociallogin.sociallogin.presentation.google.dagger
 
 import android.app.Activity
-import com.sociallogin.sociallogin.presentation.main.MainInteractor
-import com.sociallogin.sociallogin.presentation.main.view.MainActivity
+import com.sociallogin.sociallogin.presentation.google.MainInteractor
+import com.sociallogin.sociallogin.presentation.google.view.GoogleActivity
 import com.sociallogin.sociallogin.presentation.utils.GoogleSignInUtils
 import dagger.Module
 import dagger.Provides
@@ -11,7 +11,7 @@ import dagger.Provides
 class MainModule {
 
     @Provides
-    fun providesActivity(activity: MainActivity): Activity = activity
+    fun providesActivity(activity: GoogleActivity): Activity = activity
 
     @Provides
     fun providesGoogleSignInUtils(): GoogleSignInUtils = GoogleSignInUtils()

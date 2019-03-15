@@ -1,4 +1,4 @@
-package com.sociallogin.sociallogin.presentation.main
+package com.sociallogin.sociallogin.presentation.google
 
 import android.app.Activity
 import android.arch.lifecycle.MutableLiveData
@@ -10,7 +10,7 @@ import io.reactivex.rxkotlin.subscribeBy
 import timber.log.Timber
 import javax.inject.Inject
 
-class MainViewModel @Inject constructor(
+class GoogleViewModel @Inject constructor(
                      private val mainInteractor: MainInteractor): ViewModel() {
 
     val disposables = CompositeDisposable()

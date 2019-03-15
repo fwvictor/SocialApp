@@ -1,7 +1,7 @@
 package com.sociallogin.sociallogin.domain.dagger
 
-import com.sociallogin.sociallogin.presentation.main.dagger.MainModule
-import com.sociallogin.sociallogin.presentation.main.view.MainActivity
+import com.sociallogin.sociallogin.presentation.google.dagger.MainModule
+import com.sociallogin.sociallogin.presentation.google.view.GoogleActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -9,6 +9,6 @@ import dagger.android.ContributesAndroidInjector
 abstract class ActivityModule {
 
     @ContributesAndroidInjector(modules = [(MainModule::class)])
-    internal abstract fun contributeMainActivity(): MainActivity
+    internal abstract fun contributeMainActivity(): GoogleActivity
 
 }

@@ -1,4 +1,4 @@
-package com.sociallogin.sociallogin.presentation.main
+package com.sociallogin.sociallogin.presentation.google
 
 import android.app.Activity
 import com.sociallogin.sociallogin.presentation.utils.GoogleSignInUtils

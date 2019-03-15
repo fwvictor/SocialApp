@@ -1,4 +1,4 @@
-package com.sociallogin.sociallogin.presentation.main.view
+package com.sociallogin.sociallogin.presentation.google.view
 
 import android.arch.lifecycle.ViewModelProvider
 import android.arch.lifecycle.ViewModelProviders
@@ -9,27 +9,27 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import com.sociallogin.sociallogin.R
 import com.sociallogin.sociallogin.domain.dagger.Injectable
-import com.sociallogin.sociallogin.presentation.main.MainViewModel
+import com.sociallogin.sociallogin.presentation.google.GoogleViewModel
 import com.sociallogin.sociallogin.presentation.model.Status
 import com.sociallogin.sociallogin.presentation.utils.GoogleSignInUtils
 import com.sociallogin.sociallogin.presentation.utils.extension.observe
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_google.*
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity(), Injectable {
+class GoogleActivity : AppCompatActivity(), Injectable {
 
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    private lateinit var viewModel: MainViewModel
+    private lateinit var viewModel: GoogleViewModel
 
 
     /* Activity methods */
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_google)
 
         setUpViewModel()
 
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity(), Injectable {
 
     private fun setUpViewModel() {
         viewModel = ViewModelProviders.of(this, viewModelFactory)
-            .get(MainViewModel::class.java)
+            .get(GoogleViewModel::class.java)
 
 
         viewModel.isGoogleLoggedIn.observe(this) { resource ->
