@@ -14,14 +14,14 @@
 
         <!-- Activity -->
         <activity
-                android:name="com.sociallogin.sociallogin.presentation.main.view.MainActivity">
+                android:name="com.sociallogin.sociallogin.presentation.main.view.MainActivity"/>
 
+        <activity android:name=".presentation.twitter.TwitterLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
         </activity>
 
     </application>
