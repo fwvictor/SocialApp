@@ -2,7 +2,9 @@
     <string name="app_name">SocialLogin</string>
 
     <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_in_with_twitter">Sign in with Twitter</string>
     <string name="logout_with_google">Logout with Google</string>
+    <string name="logout_with_twitter">Logout with Twitter</string>
 
     <string name="sign_in_successfully">User Logged in</string>
     <string name="sign_in_error">Sign in error</string>

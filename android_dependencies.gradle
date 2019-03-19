@@ -1,16 +1,13 @@
 rootProject.ext {
 
-    rxKotlinVersion = '2.1.0'
     timberVersion = '4.7.1'
-    daggerVersion = '2.17'
     playServicesVersion = '16.0.0'
     firebaseAuthVersion = '16.1.0'
     firebaseUiAuthVersion = '4.1.0'
-    firebaseCoreVersion = '16.0.7'
+    twitterCoreVersion = '3.3.0@aar'
 
     supportLibrary = '28.0.0'
     constraintlayoutVersion = '1.0.2'
-    archLifecycleVersion = '1.1.1'
 
     junitVersion = '4.12'
     espressoCoreVersion = "3.0.2"
@@ -23,14 +20,15 @@ rootProject.ext {
             supportDesign      : "com.android.support:design:$supportLibrary",
             constraintLayout   :
                     "com.android.support.constraint:constraint-layout:$constraintlayoutVersion",
-            lifecycleExtensions:
-                    "android.arch.lifecycle:extensions:$archLifecycleVersion"
+            twitterCore        : "com.twitter.sdk.android:twitter-core:$twitterCoreVersion"
     ]
 
     domainDependencies = [
 
             timber                : "com.jakewharton.timber:timber:$timberVersion",
-            playServices_auth     : "com.google.android.gms:play-services-auth:$playServicesVersion"
+            playServices_auth     : "com.google.android.gms:play-services-auth:$playServicesVersion",
+            firebaseAuth          : "com.google.firebase:firebase-auth:$firebaseAuthVersion",
+            firebaseUiAuth        : "com.firebaseui:firebase-ui-auth:$firebaseUiAuthVersion"
     ]
 
     testDependecies = [

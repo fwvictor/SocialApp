@@ -15,6 +15,11 @@ android {
     }
     buildTypes {
 
+        all {
+            buildConfigField "String", "TWITTER_CONSUMER_SECRET", project.property('twitter.consumerSecret')
+            buildConfigField "String", "TWITTER_CONSUMER_KEY", project.property('twitter.consumerKey')
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -31,11 +36,13 @@ dependencies {
 
     implementation domainDependencies.timber
     implementation domainDependencies.playServices_auth
+    implementation domainDependencies.firebaseAuth
+    implementation domainDependencies.firebaseUiAuth
 
     implementation uiDependencies.appCompat
     implementation uiDependencies.supportDesign
     implementation uiDependencies.constraintLayout
-    implementation uiDependencies.lifecycleExtensions
+    implementation uiDependencies.twitterCore
 
     //Testing
     testImplementation testDependecies.junit

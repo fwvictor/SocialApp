@@ -14,8 +14,9 @@
 
         <!-- Activity -->
         <activity
-                android:name="com.sociallogin.sociallogin.presentation.google.GoogleLoginActivity">
+                android:name="com.sociallogin.sociallogin.presentation.google.GoogleLoginActivity"/>
 
+        <activity android:name=".presentation.twitter.TwitterLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.DEFAULT"/>
