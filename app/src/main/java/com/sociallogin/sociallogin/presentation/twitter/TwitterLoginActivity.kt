@@ -79,7 +79,7 @@ class TwitterLoginActivity : AppCompatActivity() {
 
     private fun showLoginOk() {
         Snackbar.make(
-            findViewById(android.R.id.content), getString(R.string.sign_in_with_twitter),
+            findViewById(android.R.id.content), getString(R.string.sign_in_successfully),
             Snackbar.LENGTH_LONG
         ).show()
     }

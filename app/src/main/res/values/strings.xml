@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">SocialLogin</string>
 
+    <string name="login_selector_title">Please select</string>
+
     <string name="sign_in_with_google">Sign in with Google</string>
     <string name="test_with_google">Test with Google</string>
     <string name="sign_in_with_twitter">Sign in with Twitter</string>
