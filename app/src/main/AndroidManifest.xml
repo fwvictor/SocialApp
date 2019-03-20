@@ -13,17 +13,20 @@
                  android:theme="@style/AppTheme">
 
         <!-- Activity -->
-        <activity
-                android:name="com.sociallogin.sociallogin.presentation.google.GoogleLoginActivity"/>
-
-        <activity android:name=".presentation.twitter.TwitterLoginActivity">
+        <activity android:name=".presentation.loginselector.LoginSelectorActivity"
+                    android:label="@string/login_selector_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
-
         </activity>
+        <activity
+                android:name="com.sociallogin.sociallogin.presentation.google.GoogleLoginActivity"
+                android:label="@string/sign_in_with_google"/>
+
+        <activity android:name=".presentation.twitter.TwitterLoginActivity"
+                  android:label="@string/sign_in_with_twitter"/>
 
     </application>
 
