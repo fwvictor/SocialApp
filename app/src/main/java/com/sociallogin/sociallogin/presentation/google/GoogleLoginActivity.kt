@@ -1,6 +1,7 @@
 package com.sociallogin.sociallogin.presentation.google
 
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
@@ -39,7 +40,7 @@ class GoogleLoginActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        if (requestCode == GOOGLE_REQ_CODE) {
+        if (requestCode == GOOGLE_REQ_CODE && resultCode != Activity.RESULT_CANCELED) {
             handleLoginResponse(data)
         }
     }
